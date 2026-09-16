@@ -50,7 +50,7 @@ export default function Contact() {
                 href={item.href}
                 target={item.external ? '_blank' : undefined}
                 rel={item.external ? 'noopener noreferrer' : undefined}
-                className="card-surface flex items-center gap-4 p-5"
+                className="card-surface flex items-center gap-3 p-4 sm:gap-4 sm:p-5"
                 initial={{ opacity: 0, y: 18 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -61,7 +61,7 @@ export default function Contact() {
                 </span>
                 <div className="min-w-0">
                   <p className="text-xs font-semibold uppercase tracking-wider text-muted">{item.label}</p>
-                  <p className="truncate font-medium text-fg-strong">{item.value}</p>
+                  <p className="break-all font-medium text-fg-strong sm:truncate">{item.value}</p>
                 </div>
               </motion.a>
             )

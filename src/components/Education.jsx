@@ -1,7 +1,10 @@
 import { motion } from 'framer-motion'
-import { GraduationCap } from 'lucide-react'
+import { GraduationCap, Code2 } from 'lucide-react'
 import SectionHeading from './SectionHeading'
+import TechIcon from './TechIcon'
 import { education, certifications } from '../data/education'
+
+const studyFocus = ['React.js', 'Laravel', 'MySQL', 'JavaScript']
 
 export default function Education() {
   return (
@@ -13,11 +16,11 @@ export default function Education() {
           description="Academic foundation supporting my full-stack and automation work."
         />
 
-        <div className="grid gap-6 md:grid-cols-2">
+        <div className="grid gap-4 sm:gap-6 md:grid-cols-2">
           {education.map((item, index) => (
             <motion.article
               key={item.id}
-              className="card-surface p-6"
+              className="card-surface p-5 sm:p-6"
               initial={{ opacity: 0, y: 18 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -35,10 +38,37 @@ export default function Education() {
             </motion.article>
           ))}
 
+          <motion.article
+            className="card-surface p-5 sm:p-6"
+            initial={{ opacity: 0, y: 18 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.45, delay: 0.08 }}
+          >
+            <div className="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-[color-mix(in_srgb,var(--color-accent)_15%,transparent)] text-[var(--color-accent)]">
+              <Code2 size={22} />
+            </div>
+            <h3 className="font-display text-lg font-bold text-fg-strong">Applied focus areas</h3>
+            <p className="mt-2 text-sm text-muted">
+              Building production skills alongside coursework with the stack I ship in.
+            </p>
+            <div className="mt-5 flex flex-wrap gap-2">
+              {studyFocus.map((tech) => (
+                <span
+                  key={tech}
+                  className="inline-flex items-center gap-1.5 rounded-lg border border-theme px-2.5 py-1.5 text-xs font-medium text-fg"
+                >
+                  <TechIcon name={tech} size={14} />
+                  {tech}
+                </span>
+              ))}
+            </div>
+          </motion.article>
+
           {certifications.map((cert, index) => (
             <motion.article
               key={cert.id}
-              className="card-surface p-6"
+              className="card-surface p-5 sm:p-6"
               initial={{ opacity: 0, y: 18 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}

@@ -26,6 +26,8 @@ export const projects = [
         'A complete, deployable e-commerce ecosystem covering catalog, discounts, inventory signals, orders, guest and account checkout, and live order tracking.',
     },
     github: '',
+    reviewUrl: 'https://lnkd.in/p/dsZyZkwJ',
+    reviewLabel: 'View LinkedIn Post',
   },
   {
     id: 'business-automation',
@@ -53,5 +55,6 @@ export const projects = [
         'A production internal system that automates PDFs and email, centralizes uploads, and gives role-aware access to summaries and exports.',
     },
     github: '',
+    reviewUrl: '',
   },
 ]

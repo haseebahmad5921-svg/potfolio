@@ -45,6 +45,14 @@ export default function Navbar() {
     }
   }, [open])
 
+  useEffect(() => {
+    const onResize = () => {
+      if (window.innerWidth >= 768) setOpen(false)
+    }
+    window.addEventListener('resize', onResize)
+    return () => window.removeEventListener('resize', onResize)
+  }, [])
+
   const handleNav = (href) => {
     setOpen(false)
     setActive(href)
@@ -53,10 +61,10 @@ export default function Navbar() {
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
-        scrolled ? 'border-b border-theme bg-page/85 backdrop-blur-xl' : 'bg-transparent'
+        scrolled || open ? 'border-b border-theme bg-page/90 backdrop-blur-xl' : 'bg-transparent'
       }`}
     >
-      <nav className="container-narrow flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8" aria-label="Primary">
+      <nav className="container-narrow flex h-14 items-center justify-between px-4 sm:h-16 sm:px-6 lg:px-8" aria-label="Primary">
         <a
           href="#home"
           className="font-display text-lg font-bold tracking-tight text-fg-strong"
@@ -66,7 +74,7 @@ export default function Navbar() {
           <span className="text-[var(--color-accent)]">.</span>
         </a>
 
-        <ul className="hidden items-center gap-7 md:flex">
+        <ul className="hidden items-center gap-6 lg:flex xl:gap-7">
           {links.map((link) => (
             <li key={link.href}>
               <a
@@ -95,7 +103,7 @@ export default function Navbar() {
 
           <button
             type="button"
-            className="icon-btn !h-10 !w-10 md:hidden"
+            className="icon-btn !h-10 !w-10 lg:hidden"
             aria-label={open ? 'Close menu' : 'Open menu'}
             aria-expanded={open}
             onClick={() => setOpen((v) => !v)}
@@ -108,17 +116,17 @@ export default function Navbar() {
       <AnimatePresence>
         {open && (
           <motion.div
-            className="border-t border-theme bg-page md:hidden"
+            className="border-t border-theme bg-page lg:hidden"
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
           >
-            <ul className="flex flex-col gap-1 px-4 py-4">
+            <ul className="flex max-h-[calc(100svh-3.5rem)] flex-col gap-1 overflow-y-auto px-4 py-4">
               {links.map((link) => (
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    className={`block rounded-xl px-4 py-3 text-sm font-medium ${
+                    className={`block rounded-xl px-4 py-3.5 text-base font-medium ${
                       active === link.href
                         ? 'bg-[color-mix(in_srgb,var(--color-accent)_15%,transparent)] text-[var(--color-accent)]'
                         : 'text-fg'
