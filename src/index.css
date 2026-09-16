@@ -1,0 +1,206 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-display: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Source Sans 3", ui-sans-serif, system-ui, sans-serif;
+  --color-accent: #10b981;
+  --color-accent-soft: #34d399;
+  --color-accent-muted: #059669;
+}
+
+:root {
+  --bg: #f4f7f5;
+  --bg-raised: #ffffff;
+  --bg-card: #ffffff;
+  --border: #d7e0da;
+  --muted: #5b6b63;
+  --fg: #14201a;
+  --fg-strong: #0a120e;
+  --ring-offset: #f4f7f5;
+}
+
+.dark {
+  --bg: #0b0f14;
+  --bg-raised: #121820;
+  --bg-card: #161d27;
+  --border: #243041;
+  --muted: #94a3b8;
+  --fg: #e8eef6;
+  --fg-strong: #f8fafc;
+  --ring-offset: #0b0f14;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-body);
+    background-color: var(--bg);
+    color: var(--fg);
+    @apply antialiased transition-colors duration-300;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-display);
+    color: var(--fg-strong);
+  }
+
+  ::selection {
+    background: color-mix(in srgb, var(--color-accent) 35%, transparent);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .section-pad {
+    @apply px-4 py-20 sm:px-6 sm:py-24 lg:px-8;
+  }
+
+  .container-narrow {
+    @apply mx-auto w-full max-w-6xl;
+  }
+
+  .text-fg {
+    color: var(--fg);
+  }
+
+  .text-fg-strong {
+    color: var(--fg-strong);
+  }
+
+  .text-muted {
+    color: var(--muted);
+  }
+
+  .bg-page {
+    background-color: var(--bg);
+  }
+
+  .bg-raised {
+    background-color: var(--bg-raised);
+  }
+
+  .bg-card {
+    background-color: var(--bg-card);
+  }
+
+  .border-theme {
+    border-color: var(--border);
+  }
+
+  .accent-glow {
+    box-shadow:
+      0 0 0 1px color-mix(in srgb, var(--color-accent) 25%, transparent),
+      0 0 40px color-mix(in srgb, var(--color-accent) 18%, transparent);
+  }
+
+  .card-surface {
+    @apply rounded-2xl border transition-all duration-300;
+    background: color-mix(in srgb, var(--bg-card) 96%, transparent);
+    border-color: var(--border);
+  }
+
+  :root:not(.dark) .card-surface {
+    box-shadow: 0 10px 30px rgba(15, 40, 28, 0.06);
+  }
+
+  .card-surface:hover {
+    border-color: color-mix(in srgb, var(--color-accent) 45%, var(--border));
+    transform: translateY(-2px);
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-5 py-2.5 text-sm font-semibold transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-60;
+    background: var(--color-accent);
+    color: #04110b;
+    --tw-ring-color: var(--color-accent);
+    --tw-ring-offset-color: var(--ring-offset);
+  }
+
+  .btn-primary:hover:not(:disabled) {
+    background: var(--color-accent-soft);
+    transform: translateY(-1px);
+    box-shadow: 0 10px 28px color-mix(in srgb, var(--color-accent) 35%, transparent);
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl border px-5 py-2.5 text-sm font-semibold transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2;
+    border-color: var(--border);
+    color: var(--fg-strong);
+    --tw-ring-color: var(--color-accent);
+    --tw-ring-offset-color: var(--ring-offset);
+  }
+
+  .btn-ghost:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent-soft);
+  }
+
+  .nav-link {
+    @apply relative text-sm font-medium transition-colors duration-200;
+  }
+
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0;
+    height: 2px;
+    background: var(--color-accent);
+    transition: width 0.25s ease;
+  }
+
+  .nav-link:hover::after,
+  .nav-link[aria-current="true"]::after {
+    width: 100%;
+  }
+
+  .gradient-mesh {
+    background:
+      radial-gradient(ellipse 80% 50% at 20% -10%, color-mix(in srgb, var(--color-accent) 22%, transparent), transparent 55%),
+      radial-gradient(ellipse 60% 40% at 90% 10%, color-mix(in srgb, #0ea5e9 12%, transparent), transparent 50%),
+      radial-gradient(ellipse 50% 40% at 50% 100%, color-mix(in srgb, var(--color-accent) 8%, transparent), transparent 60%),
+      var(--bg);
+  }
+
+  .input-field {
+    @apply w-full rounded-xl border px-4 py-3 text-sm outline-none transition focus:ring-2;
+    border-color: var(--border);
+    background: var(--bg);
+    color: var(--fg);
+  }
+
+  .input-field::placeholder {
+    color: var(--muted);
+  }
+
+  .input-field:focus {
+    border-color: var(--color-accent);
+    --tw-ring-color: color-mix(in srgb, var(--color-accent) 25%, transparent);
+  }
+
+  .icon-btn {
+    @apply inline-flex h-11 w-11 items-center justify-center rounded-xl border transition focus-visible:outline-none focus-visible:ring-2;
+    border-color: var(--border);
+    color: var(--muted);
+    --tw-ring-color: var(--color-accent);
+  }
+
+  .icon-btn:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+  }
+}
