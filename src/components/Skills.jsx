@@ -16,8 +16,8 @@ export default function Skills() {
       <div className="container-narrow">
         <SectionHeading
           eyebrow="Skills"
-          title="Technical toolkit"
-          description="Technologies I use to ship production web apps and internal automation — grouped the way I actually work with them."
+          title="Laravel + React toolkit"
+          description="Core full-stack skills for production web apps — plus automation experience that strengthens API thinking, auth, and reliable delivery."
         />
 
         <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 md:grid-cols-4 lg:grid-cols-5">

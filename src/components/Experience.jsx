@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import SectionHeading from './SectionHeading'
+import TechIcon from './TechIcon'
 import { experience } from '../data/experience'
 
 export default function Experience() {
@@ -8,8 +9,8 @@ export default function Experience() {
       <div className="container-narrow">
         <SectionHeading
           eyebrow="Experience"
-          title="Where I've been shipping"
-          description="Roles and contributions pulled directly from my professional work."
+          title="1.5+ years shipping production software"
+          description="Professional work that proves I can own features end-to-end — secure access, dashboards, automations, and long-term maintenance."
         />
 
         <div className="relative ml-2 border-l border-theme pl-5 sm:ml-4 sm:pl-8">
@@ -36,13 +37,35 @@ export default function Experience() {
                   </div>
                   <div className="sm:text-right">
                     <p className="text-sm font-medium text-muted">{job.duration}</p>
-                    {job.current && (
+                    {job.current ? (
                       <span className="mt-1 inline-block rounded-md bg-[color-mix(in_srgb,var(--color-accent)_15%,transparent)] px-2 py-0.5 text-xs font-semibold text-[var(--color-accent-soft)]">
                         Current
+                      </span>
+                    ) : (
+                      <span className="mt-1 inline-block rounded-md bg-[color-mix(in_srgb,var(--color-accent)_15%,transparent)] px-2 py-0.5 text-xs font-semibold text-[var(--color-accent-soft)]">
+                        1.5+ years
                       </span>
                     )}
                   </div>
                 </div>
+
+                {job.summary && (
+                  <p className="mt-4 text-sm leading-relaxed text-fg sm:text-base">{job.summary}</p>
+                )}
+
+                {job.stack?.length > 0 && (
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {job.stack.map((tech) => (
+                      <span
+                        key={tech}
+                        className="inline-flex items-center gap-1.5 rounded-lg border border-theme px-2.5 py-1 text-xs font-medium text-fg"
+                      >
+                        <TechIcon name={tech} size={14} />
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                )}
 
                 <ul className="mt-5 space-y-2.5">
                   {job.bullets.map((bullet) => (

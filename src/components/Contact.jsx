@@ -37,8 +37,8 @@ export default function Contact() {
       <div className="container-narrow">
         <SectionHeading
           eyebrow="Contact"
-          title="Let's build something together"
-          description="Have a role, freelance project, or automation idea? Reach out directly — I typically respond within a day."
+          title="Hiring for Laravel + React?"
+          description={`${profile.availability}. Reach out for full-stack roles or freelance projects — I typically respond within a day.`}
         />
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

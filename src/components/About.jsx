@@ -10,9 +10,27 @@ export default function About() {
       <div className="container-narrow">
         <SectionHeading
           eyebrow="About"
-          title="Building reliable software that teams actually use"
-          description="A concise look at how I work and what I bring to product and engineering teams."
+          title="Laravel + React developer ready to ship"
+          description="Production experience, a full e-commerce stack built solo, and a clear focus on Laravel and React roles."
         />
+
+        <div className="mb-6 grid gap-3 sm:mb-8 sm:grid-cols-3 sm:gap-4">
+          {profile.highlights.map((item, index) => (
+            <motion.div
+              key={item.label}
+              className="card-surface px-4 py-4 text-center sm:px-5 sm:py-5"
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-40px' }}
+              transition={{ duration: 0.4, delay: index * 0.06 }}
+            >
+              <p className="font-display text-lg font-bold text-fg-strong sm:text-xl">{item.value}</p>
+              <p className="mt-1 text-xs font-semibold uppercase tracking-wider text-[var(--color-accent)]">
+                {item.label}
+              </p>
+            </motion.div>
+          ))}
+        </div>
 
         <div className="grid gap-6 lg:grid-cols-[1.4fr_1fr] lg:gap-8">
           <motion.div
@@ -32,7 +50,7 @@ export default function About() {
               </div>
               <div className="rounded-xl border border-theme bg-[color-mix(in_srgb,var(--color-accent)_6%,transparent)] p-4">
                 <dt className="text-xs font-semibold uppercase tracking-wider text-[var(--color-accent)]">Focus</dt>
-                <dd className="mt-1 font-medium text-fg-strong">Full-stack apps & Workspace automation</dd>
+                <dd className="mt-1 font-medium text-fg-strong">Laravel + React full-stack roles</dd>
               </div>
             </dl>
           </motion.div>
@@ -44,8 +62,8 @@ export default function About() {
             viewport={{ once: true, margin: '-60px' }}
             transition={{ duration: 0.5, delay: 0.08 }}
           >
-            <h3 className="font-display text-lg font-semibold text-fg-strong">Core stack</h3>
-            <p className="mt-2 text-sm text-muted">The tools behind my production work.</p>
+            <h3 className="font-display text-lg font-semibold text-fg-strong">Hiring stack</h3>
+            <p className="mt-2 text-sm text-muted">What I want to work with every day.</p>
             <ul className="mt-5 grid grid-cols-2 gap-3">
               {heroStack.map((tech, index) => (
                 <motion.li

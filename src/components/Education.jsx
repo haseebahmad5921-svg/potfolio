@@ -12,8 +12,8 @@ export default function Education() {
       <div className="container-narrow">
         <SectionHeading
           eyebrow="Education"
-          title="Education & certifications"
-          description="Academic foundation supporting my full-stack and automation work."
+          title="Education & applied focus"
+          description="Academic foundation paired with the Laravel + React stack I ship in production."
         />
 
         <div className="grid gap-4 sm:gap-6 md:grid-cols-2">
@@ -50,7 +50,7 @@ export default function Education() {
             </div>
             <h3 className="font-display text-lg font-bold text-fg-strong">Applied focus areas</h3>
             <p className="mt-2 text-sm text-muted">
-              Building production skills alongside coursework with the stack I ship in.
+              Strengthening Laravel, React, and MySQL skills alongside BSCS coursework.
             </p>
             <div className="mt-5 flex flex-wrap gap-2">
               {studyFocus.map((tech) => (

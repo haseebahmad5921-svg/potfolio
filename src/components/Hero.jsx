@@ -16,10 +16,10 @@ const fadeUp = {
 }
 
 const floatingTech = [
-  { name: 'React.js', className: 'left-2 top-8 sm:-left-4 sm:top-10' },
-  { name: 'Laravel', className: 'right-2 top-16 sm:-right-5 sm:top-20' },
+  { name: 'Laravel', className: 'left-2 top-8 sm:-left-4 sm:top-10' },
+  { name: 'React.js', className: 'right-2 top-16 sm:-right-5 sm:top-20' },
   { name: 'MySQL', className: 'bottom-16 left-4 sm:-left-6 sm:bottom-24' },
-  { name: 'Google Apps Script', className: 'bottom-10 right-3 sm:-right-4 sm:bottom-16' },
+  { name: 'PHP', className: 'bottom-10 right-3 sm:-right-4 sm:bottom-16' },
 ]
 
 export default function Hero() {
@@ -39,7 +39,7 @@ export default function Hero() {
             animate="show"
             custom={0}
           >
-            Available for hire
+            Open to work · Laravel + React roles
           </motion.p>
 
           <motion.h1
@@ -71,7 +71,7 @@ export default function Hero() {
             <div className="relative aspect-[4/5] overflow-hidden rounded-3xl border border-theme accent-glow">
               <img
                 src={profilePhoto}
-                alt={`Professional headshot of ${profile.name}, Full-Stack Developer`}
+                alt={`Professional headshot of ${profile.name}, Laravel and React Full-Stack Developer`}
                 className="h-full w-full object-cover object-top"
                 width={220}
                 height={275}
@@ -116,11 +116,11 @@ export default function Hero() {
             animate="show"
             custom={5}
           >
-            <a href="#projects" className="btn-primary accent-glow w-full sm:w-auto">
-              View Projects
+            <a href="#experience" className="btn-primary accent-glow w-full sm:w-auto">
+              View Experience
             </a>
-            <a href="#contact" className="btn-ghost w-full sm:w-auto">
-              Contact Me
+            <a href="#projects" className="btn-ghost w-full sm:w-auto">
+              Laravel + React Work
             </a>
           </motion.div>
 
@@ -194,7 +194,7 @@ export default function Hero() {
           <div className="relative aspect-[4/5] overflow-hidden rounded-[1.75rem] border border-theme accent-glow">
             <img
               src={profilePhoto}
-              alt={`Professional headshot of ${profile.name}, Full-Stack Developer`}
+              alt={`Professional headshot of ${profile.name}, Laravel and React Full-Stack Developer`}
               className="h-full w-full object-cover object-top"
               width={480}
               height={600}

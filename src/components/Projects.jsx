@@ -23,8 +23,8 @@ export default function Projects() {
       <div className="container-narrow">
         <SectionHeading
           eyebrow="Projects"
-          title="Selected case studies"
-          description="Client and production work presented as case studies. These deliverables are confidential and are not publicly hosted — no live demos."
+          title="Laravel + React case studies"
+          description="Flagship full-stack work first — then production automation that shows I ship and maintain real systems. Case studies only; no public demos for confidential deliverables."
         />
 
         <div className="filter-scroll mb-6 sm:mb-8" role="tablist" aria-label="Filter projects by technology">
@@ -98,7 +98,7 @@ export default function Projects() {
                         <p className="mt-1 text-sm text-[var(--color-accent)]">{project.subtitle}</p>
                       </div>
                       <span className="shrink-0 rounded-lg bg-[color-mix(in_srgb,var(--color-accent)_12%,transparent)] px-2 py-1 text-[11px] font-semibold text-[var(--color-accent-soft)] sm:px-2.5 sm:text-xs">
-                        Case study
+                        {project.featured ? 'Flagship' : 'Case study'}
                       </span>
                     </div>
 

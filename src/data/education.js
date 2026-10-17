@@ -4,7 +4,7 @@ export const education = [
     degree: 'Bachelor of Science in Computer Science (BSCS)',
     institution: 'Lahore Garrison University (LGU)',
     duration: '2023 – 2027',
-    status: 'Ongoing',
+    status: 'Expected',
   },
 ]
 

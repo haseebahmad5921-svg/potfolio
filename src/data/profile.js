@@ -1,16 +1,22 @@
 export const profile = {
   name: 'Haseeb Ahmad',
-  role: 'Full-Stack Developer',
+  role: 'Full-Stack Developer · Laravel & React',
   location: 'Lahore, Pakistan',
   email: 'haseebahmad5921@gmail.com',
   phone: '0332-4194406',
   linkedin: 'https://linkedin.com/in/haseeb-ahmad-a58759334',
   // Add your GitHub URL when available
   github: '',
+  availability: 'Open to full-time, remote, and freelance roles',
   tagline:
-    'I build production-grade web apps and internal automation systems that cut manual work and scale with the business.',
+    'I build production-ready web apps with Laravel and React — from REST APIs and MySQL schemas to admin panels, auth, and polished customer-facing UIs.',
   summary:
-    'Full-Stack Developer with hands-on experience building production-grade web applications using React, Laravel, and Google Apps Script. Currently at Deviotech, I deliver internal business automation — PDF generation, automated email workflows, Google Drive file management, and secure multi-role dashboards — with a focus on clean, maintainable code across frontend and backend.',
+    'Full-Stack Developer with hands-on experience shipping production web applications using React, Laravel, and MySQL. I designed and built a complete solo e-commerce platform (admin panel + customer site) with token auth, RBAC-ready APIs, real-time sales dashboards, and end-to-end checkout. Alongside that, I spent 1.5+ years at Deviotech delivering an internal business automation system in Google Apps Script — sharpening skills in secure login, role-based access, dashboards, and reliable workflow delivery.',
   aboutExtended:
-    'I work end-to-end: from database design and REST APIs to polished React interfaces and Workspace automations. Whether it is a full e-commerce stack or a document workflow inside Google Workspace, I care about reliable delivery, clear architecture, and outcomes teams can trust.',
+    'I work end-to-end across the Laravel + React stack: database design, RESTful APIs, token-based authentication, role-based access control, and responsive frontends. I care about clean architecture, maintainable code, and features teams can trust in production. Currently open to work and focused on Laravel + React full-stack roles.',
+  highlights: [
+    { label: 'Professional experience', value: '1.5+ years' },
+    { label: 'Core stack', value: 'Laravel · React · MySQL' },
+    { label: 'Looking for', value: 'Full-time / Remote / Freelance' },
+  ],
 }
