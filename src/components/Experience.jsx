@@ -9,8 +9,8 @@ export default function Experience() {
       <div className="container-narrow">
         <SectionHeading
           eyebrow="Experience"
-          title="1.5+ years shipping production software"
-          description="Professional work that proves I can own features end-to-end — secure access, dashboards, automations, and long-term maintenance."
+          title="3+ years shipping Laravel + React"
+          description="Professional work that proves I can own features end-to-end — APIs, auth, dashboards, automations, and long-term maintenance."
         />
 
         <div className="relative ml-2 border-l border-theme pl-5 sm:ml-4 sm:pl-8">

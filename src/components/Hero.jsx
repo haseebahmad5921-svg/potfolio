@@ -39,7 +39,7 @@ export default function Hero() {
             animate="show"
             custom={0}
           >
-            Open to work · Laravel + React roles
+            Open to work · 3+ years Laravel + React
           </motion.p>
 
           <motion.h1

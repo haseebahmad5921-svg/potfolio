@@ -11,7 +11,7 @@ export default function About() {
         <SectionHeading
           eyebrow="About"
           title="Laravel + React developer ready to ship"
-          description="Production experience, a full e-commerce stack built solo, and a clear focus on Laravel and React roles."
+          description="3+ years with Laravel and React, a full e-commerce stack built solo, and a clear focus on full-stack roles."
         />
 
         <div className="mb-6 grid gap-3 sm:mb-8 sm:grid-cols-3 sm:gap-4">
